@@ -1,4 +1,4 @@
-package com.example.kafkaproducer.configuration;
+package com.example.kafkaconsumer.configuration;
 
 import java.util.HashMap;
 
@@ -10,10 +10,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaAdmin;
 
 @Configuration
-public class KafkaTopicConfig {
+public class TopicConfig {
 
 	@Value(value = "${kafka.bootstrapAddress}")
 	private String bootstrapAddress;
+
+	@Value(value = "${kafka.topicName}")
+	private String topic;
 
 	@Bean
 	public KafkaAdmin kafkaAdmin() {
@@ -23,12 +26,15 @@ public class KafkaTopicConfig {
 		configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
 
 		return new KafkaAdmin(configs);
+
 	}
 
 	@Bean
+
 	public NewTopic topicDemo() {
 
-		return new NewTopic("ejemplo", 1, (short) 1);
+		return new NewTopic(topic, 1, (short) 1);
+
 	}
 
 }
