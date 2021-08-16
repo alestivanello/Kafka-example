@@ -1,0 +1,65 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin-top: 15em;
+}
+
+.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-button {
+    min-width: 250px;
+    background-color: rgb(202, 39, 72);
+    color: white;
+    margin-top: 20%;
+}
+
+.circulo {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    background-color: rgb(202, 39, 72);
+}
+
+.chatapp {
+    color: white;
+    font-size: medium;
+}
+
+.registro {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}

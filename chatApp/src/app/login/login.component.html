@@ -1,0 +1,36 @@
+<img src="../../luna.jpg" id="bg" alt="">
+<mat-card>
+    <mat-card-title>
+        <div class="circulo">ChatApp</div>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="user" (ngSubmit)="submit()">
+            <p>
+                <mat-form-field>
+                    <input autofocus type="text" matInput placeholder="Email" formControlName="username" />
+                    <mat-error>
+                        Email inválido
+                    </mat-error>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Contraseña" formControlName="password" />
+                    <mat-error>
+                        Una contraseña segura tiene al menos 6 dígitos
+                    </mat-error>
+                </mat-form-field>
+            </p>
+
+            <div class="button">
+                <button *ngIf="formGroupIsValid()" type="submit" mat-button>Login</button>
+                <button disabled *ngIf="!formGroupIsValid()" mat-button>Login</button>
+            </div>
+
+            <div class="registro">
+                <p> ¿No tienes una cuenta? <strong style="color: red; cursor:pointer">registrate ya</strong> </p>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
